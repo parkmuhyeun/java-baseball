@@ -65,7 +65,7 @@ public class BaseballController {
     private void playGame(Computer computer, User user) {
         int game = CONTINUE;
         while (isContinue(game)) {
-            printMessage("숫자를 입력해주세요 : ");
+            outputView.outputInputDigit();
             Ball ball = computer.compareDigits(user.input());
             printMessage(ball.toString() + NEW_LINE);
             game = isEnd(ball);
