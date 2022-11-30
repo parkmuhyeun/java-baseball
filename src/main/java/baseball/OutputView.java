@@ -8,10 +8,6 @@ public class OutputView {
         System.out.println(START);
     }
 
-    public void outputInputDigit() {
-        System.out.println(INPUT_DIGIT);
-    }
-
     public void outputResult(String result) {
         System.out.println(result);
     }
@@ -20,7 +16,4 @@ public class OutputView {
         System.out.println(END);
     }
 
-    public void outputAdditionalGame() {
-        System.out.println(ADDITIONAL_GAME);
-    }
 }
