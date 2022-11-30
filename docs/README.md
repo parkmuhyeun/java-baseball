@@ -26,3 +26,9 @@
 - 1: 재시작
 - 2: 완전히 종료
 - 그 외의 값 입력시 IllegalArgumentException 발생
+
+---
+
+# Flow chart
+
+![](./Flow.png)
