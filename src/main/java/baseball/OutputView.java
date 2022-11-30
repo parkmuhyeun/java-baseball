@@ -12,6 +12,10 @@ public class OutputView {
         System.out.println(INPUT_DIGIT);
     }
 
+    public void outputResult(String result) {
+        System.out.println(result);
+    }
+
     public void outputEndMessage() {
         System.out.println(END);
     }

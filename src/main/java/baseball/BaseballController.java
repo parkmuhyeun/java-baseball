@@ -34,10 +34,6 @@ public class BaseballController {
         system = Integer.parseInt(select);
     }
 
-    private void printMessage(String message) {
-        System.out.print(message);
-    }
-
     private void validateSelect(String select) {
         if (isRightLength(select) && Character.isDigit(getCharacter(select)) && isRightSelect(select)) {
             return;
@@ -67,7 +63,7 @@ public class BaseballController {
         while (isContinue(game)) {
             outputView.outputInputDigit();
             Ball ball = computer.compareDigits(user.input());
-            printMessage(ball.toString() + NEW_LINE);
+            outputView.outputResult(ball.toString());
             game = isEnd(ball);
         }
     }
