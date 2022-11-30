@@ -14,9 +14,10 @@ class UserTest {
     @Test
     @DisplayName("사용자 입력 - 성공")
     void 입력_성공() {
-        initData("345");
+        String input = "345";
+        initData(input);
         User user = new User();
-        List<Integer> digits = user.input();
+        List<Integer> digits = user.input(input);
 
         assertEquals(3, digits.size());
         assertNotSame(digits.get(0), digits.get(1));
@@ -30,10 +31,11 @@ class UserTest {
     @Test
     @DisplayName("사용자 입력 - 실패")
     void 입력_개수_실패() {
-        initData("34621");
+        String input = "34621";
+        initData(input);
         User user = new User();
 
-        assertThatThrownBy(() -> user.input())
+        assertThatThrownBy(() -> user.input(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("세 자리를 입력해 주세요.");
     }
@@ -41,10 +43,11 @@ class UserTest {
     @Test
     @DisplayName("사용자 입력 - 실패")
     void 숫자외_다른값_입력_실패() {
-        initData("wea");
+        String input = "wea";
+        initData(input);
         User user = new User();
 
-        assertThatThrownBy(() -> user.input())
+        assertThatThrownBy(() -> user.input(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("숫자를 입력해 주세요.");
     }
@@ -52,10 +55,11 @@ class UserTest {
     @Test
     @DisplayName("사용자 입력 - 실패")
     void 같은_숫자_입력_실패() {
-        initData("221");
+        String input = "221";
+        initData(input);
         User user = new User();
 
-        assertThatThrownBy(() -> user.input())
+        assertThatThrownBy(() -> user.input(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("동일한 수를 입력할 수 없습니다.");
     }

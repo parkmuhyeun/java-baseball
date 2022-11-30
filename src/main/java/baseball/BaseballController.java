@@ -9,10 +9,12 @@ public class BaseballController {
     private static final int SELECT_LENGTH = 1;
 
     private final OutputView outputView;
+    private final InputView inputView;
     private int system = CONTINUE;
 
     public BaseballController() {
         outputView = new OutputView();
+        inputView = new InputView();
     }
 
     public void run() {
@@ -62,7 +64,8 @@ public class BaseballController {
         int game = CONTINUE;
         while (isContinue(game)) {
             outputView.outputInputDigit();
-            Ball ball = computer.compareDigits(user.input());
+            String inputDigit = inputView.inputDigit();
+            Ball ball = computer.compareDigits(user.input(inputDigit));
             outputView.outputResult(ball.toString());
             game = isEnd(ball);
         }

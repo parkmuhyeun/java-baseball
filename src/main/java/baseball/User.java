@@ -1,7 +1,5 @@
 package baseball;
 
-import camp.nextstep.edu.missionutils.Console;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,14 +10,14 @@ public class User {
     public User() {
     }
 
-    public List<Integer> input() {
-        char[] input = getDigits();
+    public List<Integer> input(String input) {
+        char[] inputDigit = input.toCharArray();
         List<Integer> digits = new ArrayList<>();
 
-        validateLength(input);
-        validateDigit(input);
-        validateSameDigit(input);
-        convertToInt(input, digits);
+        validateLength(inputDigit);
+        validateDigit(inputDigit);
+        validateSameDigit(inputDigit);
+        convertToInt(inputDigit, digits);
         return digits;
     }
 
@@ -75,14 +73,6 @@ public class User {
         if (input.length != DIGITS_SIZE) {
             throw new IllegalArgumentException("세 자리를 입력해 주세요.");
         }
-    }
-
-    private char[] getDigits() {
-        return inputData().toCharArray();
-    }
-
-    private String inputData() {
-        return Console.readLine();
     }
 
 }
