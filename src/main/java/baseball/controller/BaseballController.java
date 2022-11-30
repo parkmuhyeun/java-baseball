@@ -1,6 +1,12 @@
-package baseball;
+package baseball.controller;
 
-import static baseball.ErrorMessage.INCORRECT_SELECT;
+import baseball.model.Ball;
+import baseball.model.Computer;
+import baseball.model.User;
+import baseball.view.InputView;
+import baseball.view.OutputView;
+
+import static baseball.message.ErrorMessage.INCORRECT_SELECT;
 
 public class BaseballController {
     private static final int CONTINUE = 1;

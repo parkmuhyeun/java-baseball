@@ -1,4 +1,4 @@
-package baseball;
+package baseball.message;
 
 public class NoticeMessage {
     public static final String START = "숫자 야구 게임을 시작합니다.";

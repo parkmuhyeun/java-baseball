@@ -1,4 +1,4 @@
-package baseball;
+package baseball.model;
 
 public class Ball {
     private static final int END = 3;

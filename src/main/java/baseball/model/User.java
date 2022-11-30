@@ -1,9 +1,9 @@
-package baseball;
+package baseball.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static baseball.ErrorMessage.*;
+import static baseball.message.ErrorMessage.*;
 
 public class User {
     private static final int DIGITS_SIZE = 3;

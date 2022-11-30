@@ -1,8 +1,8 @@
-package baseball;
+package baseball.view;
 
 import camp.nextstep.edu.missionutils.Console;
 
-import static baseball.NoticeMessage.*;
+import static baseball.message.NoticeMessage.*;
 
 public class InputView {
 

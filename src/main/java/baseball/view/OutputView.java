@@ -1,6 +1,6 @@
-package baseball;
+package baseball.view;
 
-import static baseball.NoticeMessage.*;
+import static baseball.message.NoticeMessage.*;
 
 public class OutputView {
 

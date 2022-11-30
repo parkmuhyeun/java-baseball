@@ -1,4 +1,4 @@
-package baseball;
+package baseball.message;
 
 public class ErrorMessage {
     public static final String USER_DIGIT_LENGTH = "세 자리를 입력해 주세요.";
