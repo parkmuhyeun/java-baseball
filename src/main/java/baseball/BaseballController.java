@@ -8,13 +8,15 @@ public class BaseballController {
     private static final char NEW_LINE = '\n';
     private static final int SELECT_LENGTH = 1;
 
+    private final OutputView outputView;
     private int system = CONTINUE;
 
     public BaseballController() {
+        outputView = new OutputView();
     }
 
     public void run() {
-        printMessage("숫자 야구 게임을 시작합니다." + NEW_LINE);
+        outputView.outputStartMessage();
         while (isContinue(system)) {
             Computer computer = new Computer();
             User user = new User();
