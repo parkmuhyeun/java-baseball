@@ -3,6 +3,8 @@ package baseball;
 import java.util.ArrayList;
 import java.util.List;
 
+import static baseball.ErrorMessage.*;
+
 public class User {
     private static final int DIGITS_SIZE = 3;
     private static final char ZERO = '0';
@@ -35,7 +37,7 @@ public class User {
 
     private void checkSameDigit(char[] input, int row, int column) {
         if (isSameDigit(input[row], input[column])) {
-            throw new IllegalArgumentException("동일한 수를 입력할 수 없습니다.");
+            throw new IllegalArgumentException(USER_SAME_DIGIT);
         }
     }
 
@@ -61,7 +63,7 @@ public class User {
 
     private void checkDigit(char[] digits, int index) {
         if (isWrong(digits[index])) {
-            throw new IllegalArgumentException("숫자를 입력해 주세요.");
+            throw new IllegalArgumentException(USER_DIGIT_CHECK);
         }
     }
 
@@ -71,7 +73,7 @@ public class User {
 
     private void validateLength(char[] input) {
         if (input.length != DIGITS_SIZE) {
-            throw new IllegalArgumentException("세 자리를 입력해 주세요.");
+            throw new IllegalArgumentException(USER_DIGIT_LENGTH);
         }
     }
 

@@ -1,5 +1,7 @@
 package baseball;
 
+import static baseball.ErrorMessage.INCORRECT_SELECT;
+
 public class BaseballController {
     private static final int CONTINUE = 1;
     private static final int END = 2;
@@ -36,7 +38,7 @@ public class BaseballController {
         if (isRightLength(select) && Character.isDigit(getCharacter(select)) && isRightSelect(select)) {
             return;
         }
-        throw new IllegalArgumentException("1이나 2만 입력 가능합니다.");
+        throw new IllegalArgumentException(INCORRECT_SELECT);
     }
 
     private boolean isRightLength(String select) {
