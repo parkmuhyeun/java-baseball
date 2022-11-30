@@ -1,7 +1,6 @@
 package baseball;
 
-import static baseball.NoticeMessage.END;
-import static baseball.NoticeMessage.START;
+import static baseball.NoticeMessage.*;
 
 public class OutputView {
 
@@ -11,5 +10,9 @@ public class OutputView {
 
     public void outputEndMessage() {
         System.out.println(END);
+    }
+
+    public void outputAdditionalGame() {
+        System.out.println(ADDITIONAL_GAME);
     }
 }
