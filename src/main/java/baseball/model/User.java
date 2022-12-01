@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static baseball.message.ErrorMessage.*;
+import static baseball.model.Digit.DIGIT_SIZE;
 
 public class User {
-    private static final int DIGITS_SIZE = 3;
     private static final char ZERO = '0';
 
     public User() {
@@ -24,13 +24,13 @@ public class User {
     }
 
     private void validateSameDigit(char[] input) {
-        for (int row = 0; row < DIGITS_SIZE - 1; row++) {
+        for (int row = 0; row < DIGIT_SIZE.getValue() - 1; row++) {
             validateSameDigitByColumn(input, row);
         }
     }
 
     private void validateSameDigitByColumn(char[] input, int row) {
-        for (int column = row + 1; column < DIGITS_SIZE; column++) {
+        for (int column = row + 1; column < DIGIT_SIZE.getValue(); column++) {
             checkSameDigit(input, row, column);
         }
     }
@@ -46,7 +46,7 @@ public class User {
     }
 
     private void convertToInt(char[] input, List<Integer> digits) {
-        for (int index = 0; index < DIGITS_SIZE; index++) {
+        for (int index = 0; index < DIGIT_SIZE.getValue(); index++) {
             digits.add(toInt(input[index]));
         }
     }
@@ -56,7 +56,7 @@ public class User {
     }
 
     private void validateDigit(char[] digits) {
-        for (int index = 0; index < DIGITS_SIZE; index++) {
+        for (int index = 0; index < DIGIT_SIZE.getValue(); index++) {
             checkDigit(digits, index);
         }
     }
@@ -72,7 +72,7 @@ public class User {
     }
 
     private void validateLength(char[] input) {
-        if (input.length != DIGITS_SIZE) {
+        if (input.length != DIGIT_SIZE.getValue()) {
             throw new IllegalArgumentException(USER_DIGIT_LENGTH);
         }
     }

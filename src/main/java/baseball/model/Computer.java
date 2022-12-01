@@ -4,11 +4,9 @@ import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Computer {
-    private static final int RANGE_START = 1;
-    private static final int RANGE_END = 9;
-    private static final int DIGITS_SIZE = 3;
+import static baseball.model.Digit.*;
 
+public class Computer {
     private List<Integer> digits = new ArrayList<>();
 
     public Computer() {
@@ -22,14 +20,14 @@ public class Computer {
     public Ball compareDigits(List<Integer> inputDigits) {
         Ball ball = new Ball();
 
-        for (int row = 0; row < DIGITS_SIZE; row++) {
+        for (int row = 0; row < DIGIT_SIZE.getValue(); row++) {
             compareDigitsByColumn(inputDigits, ball, row);
         }
         return ball;
     }
 
     private void compareDigitsByColumn(List<Integer> inputDigits, Ball ball, int row) {
-        for (int column = 0; column < DIGITS_SIZE; column++) {
+        for (int column = 0; column < DIGIT_SIZE.getValue(); column++) {
             if (isStrike(inputDigits, row, column)) {
                 ball.addStrike();
                 return;
@@ -56,12 +54,12 @@ public class Computer {
 
     private void generateRandomNumber() {
         while (isValidRange()) {
-            addNumber(Randoms.pickNumberInRange(RANGE_START, RANGE_END));
+            addNumber(Randoms.pickNumberInRange(RANGE_START.getValue(), RANGE_END.getValue()));
         }
     }
 
     private boolean isValidRange() {
-        return digits.size() != DIGITS_SIZE;
+        return digits.size() != DIGIT_SIZE.getValue();
     }
 
     private void addNumber(int pickNumber) {
