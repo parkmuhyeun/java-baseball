@@ -3,7 +3,6 @@ package baseball;
 import baseball.model.User;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayInputStream;
 import java.util.List;
 
