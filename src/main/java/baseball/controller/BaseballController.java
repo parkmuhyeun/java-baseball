@@ -1,6 +1,6 @@
 package baseball.controller;
 
-import baseball.model.Ball;
+import baseball.model.Hint;
 import baseball.model.Computer;
 import baseball.model.User;
 import baseball.view.InputView;
@@ -64,9 +64,9 @@ public class BaseballController {
         int game = CONTINUE;
         while (isContinue(game)) {
             String inputDigit = inputView.inputDigit();
-            Ball ball = computer.compareDigits(user.input(inputDigit));
-            outputView.outputResult(ball.toString());
-            game = isEnd(ball);
+            Hint hint = computer.compareDigits(user.input(inputDigit));
+            outputView.outputResult(hint.toString());
+            game = isEnd(hint);
         }
     }
 
@@ -74,8 +74,8 @@ public class BaseballController {
         return game == CONTINUE;
     }
 
-    private int isEnd(Ball ball) {
-        if (ball.isEnd()) {
+    private int isEnd(Hint hint) {
+        if (hint.isEnd()) {
             return END;
         }
         return CONTINUE;

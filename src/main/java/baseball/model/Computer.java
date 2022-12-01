@@ -17,24 +17,24 @@ public class Computer {
         return digits;
     }
 
-    public Ball compareDigits(List<Integer> inputDigits) {
-        Ball ball = new Ball();
+    public Hint compareDigits(List<Integer> inputDigits) {
+        Hint hint = new Hint();
 
         for (int row = 0; row < DIGIT_SIZE.getValue(); row++) {
-            compareDigitsByColumn(inputDigits, ball, row);
+            compareDigitsByColumn(inputDigits, hint, row);
         }
-        return ball;
+        return hint;
     }
 
-    private void compareDigitsByColumn(List<Integer> inputDigits, Ball ball, int row) {
+    private void compareDigitsByColumn(List<Integer> inputDigits, Hint hint, int row) {
         for (int column = 0; column < DIGIT_SIZE.getValue(); column++) {
             if (isStrike(inputDigits, row, column)) {
-                ball.addStrike();
+                hint.addStrike();
                 return;
             }
 
             if (isSameDigit(inputDigits.get(row), digits.get(column))) {
-                ball.addBall();
+                hint.addBall();
                 return;
             }
         }

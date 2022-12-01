@@ -1,45 +1,45 @@
 package baseball;
 
-import baseball.model.Ball;
+import baseball.model.Hint;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BallTest {
+class HintTest {
 
     @Test
     @DisplayName("스트라이크 추가")
     void addStrike() {
         int result = 1;
-        Ball ball = new Ball();
+        Hint hint = new Hint();
 
-        ball.addStrike();
-        assertEquals(result, ball.getStrike());
+        hint.addStrike();
+        assertEquals(result, hint.getStrike());
     }
 
     @Test
     @DisplayName("볼 추가")
     void addBall() {
         int result = 1;
-        Ball ball = new Ball();
+        Hint hint = new Hint();
 
-        ball.addBall();
-        assertEquals(result, ball.getBall());
+        hint.addBall();
+        assertEquals(result, hint.getBall());
     }
 
     @Test
     @DisplayName("게임 끝났는지")
     void isEnd() {
-        Ball ball = new Ball();
-        addStrike(ball, 3);
+        Hint hint = new Hint();
+        addStrike(hint, 3);
 
-        assertTrue(ball.isEnd());
+        assertTrue(hint.isEnd());
     }
 
-    private void addStrike(Ball ball, int count) {
+    private void addStrike(Hint hint, int count) {
         for (int now = 0; now < count; now++) {
-            ball.addStrike();
+            hint.addStrike();
         }
     }
 
@@ -47,10 +47,10 @@ class BallTest {
     @DisplayName("결과 출력")
     void testToString() {
         String result = "1볼 2스트라이크";
-        Ball ball = new Ball();
-        addStrike(ball, 2);
-        ball.addBall();
+        Hint hint = new Hint();
+        addStrike(hint, 2);
+        hint.addBall();
 
-        assertEquals(result, ball.toString());
+        assertEquals(result, hint.toString());
     }
 }

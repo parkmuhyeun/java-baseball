@@ -1,12 +1,12 @@
 package baseball.model;
 
-public class Ball {
+public class Hint {
     private static final int END = 3;
 
     private int strike;
     private int ball;
 
-    public Ball() {
+    public Hint() {
     }
 
     public int getStrike() {
