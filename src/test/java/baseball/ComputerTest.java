@@ -27,6 +27,6 @@ class ComputerTest {
         Computer computer = new Computer();
         List<Integer> digits = computer.getDigits();
 
-        assertEquals(result, computer.compareDigits(digits).getStrike());
+        assertEquals(result, computer.compareInputDigits(digits).getStrike());
     }
 }

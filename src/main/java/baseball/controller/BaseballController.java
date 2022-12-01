@@ -64,7 +64,7 @@ public class BaseballController {
         int game = CONTINUE;
         while (isContinue(game)) {
             String inputDigit = inputView.inputDigit();
-            Hint hint = computer.compareDigits(user.input(inputDigit));
+            Hint hint = computer.compareInputDigits(user.input(inputDigit));
             outputView.outputResult(hint.toString());
             game = isEnd(hint);
         }
